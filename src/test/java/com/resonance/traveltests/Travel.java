@@ -38,6 +38,6 @@ public class Travel extends BaseFramework{
 	
 	@Test
 	public void m1() {
-		System.out.println("My Test case");
+		LOG.info("My Test case");
 	}
 }
