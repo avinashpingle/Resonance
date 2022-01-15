@@ -35,4 +35,9 @@ public class Travel extends BaseFramework{
 	public void verifySearchResultsForShoes() {
 		enterText(Locator.homeScreen_searchTxtBx,"Shoes");
 	}
+	
+	@Test
+	public void m1() {
+		LOG.info("My Test case");
+	}
 }
