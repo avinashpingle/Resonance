@@ -32,7 +32,7 @@ public class Keyword {
 	 *                    <li>Safari</li>
 	 *                    </ul>
 	 */
-	public static void openBrowser(String browserName) {
+	public static RemoteWebDriver openBrowser(String browserName) {
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
@@ -46,6 +46,7 @@ public class Keyword {
 		}
 		LOG.info(browserName + " is launched successfully");
 		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		return driver;
 	}
 
 	/**
@@ -105,6 +106,10 @@ public class Keyword {
 			return null;
 		}
 	}
+	/**
+	 * 
+	 * @param duration is in milliseconds
+	 */
 	public static void waitFor(long duration) {
 		try {
 			Thread.sleep(duration);
@@ -112,5 +117,9 @@ public class Keyword {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void waitForPresenceOfElement(WebElement element) {
+		//Logic
 	}
 }
