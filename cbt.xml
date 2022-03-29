@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel = "tests" thread-count="3">
-  <test name="Chrome Tests">
-    <classes>
-      <class name="com.resonance.config.BaseFramework"/>
-      <class name="com.resonance.traveltests.Travel"/>
-    </classes>
-  </test> <!-- Test -->
-   <test name="Firefox Tests">
-    <classes>
-      <class name="com.resonance.config.BaseFramework"/>
-      <class name="com.resonance.traveltests.Travel"/>
-    </classes>
-  </test> <!-- Test -->
-   <test name="Safari Tests">
-    <classes>
-      <class name="com.resonance.config.BaseFramework"/>
-      <class name="com.resonance.traveltests.Travel"/>
-    </classes>
-  </test> <!-- Test -->
-  
+<suite name="Suite" parallel="tests" thread-count="3">
+	<test name="Chrome Tests">
+		<parameter name="browser-name" value="Chrome"></parameter>
+		<classes>
+
+			<class name="com.resonance.homepage.HomePageTests" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="Firefox Tests">
+		<parameter name="browser-name" value="Firefox"></parameter>
+		<classes>
+			<class name="com.resonance.homepage.HomePageTests" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="Safari Tests">
+		<parameter name="browser-name" value="Safari"></parameter>
+		<classes>
+			<class name="com.resonance.homepage.HomePageTests" />
+		</classes>
+	</test> <!-- Test -->
+
 </suite> <!-- Suite -->

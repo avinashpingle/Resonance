@@ -5,7 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends PageBase{
+import com.resonance.config.BaseFramework;
+
+public class HomePage extends BaseFramework{
 	private static final Logger LOG = Logger.getLogger(HomePage.class);
 	
 	@FindBy(css = "a[href^=\"https://ijmeet.com/app\"]")
@@ -26,5 +28,9 @@ public class HomePage extends PageBase{
 	public void clickOnLogo() {
 		logo.click();
 		LOG.info("Clicked on Logo");
+	}
+
+	public String getTitle() {
+		return driver.getTitle();
 	}
 }
